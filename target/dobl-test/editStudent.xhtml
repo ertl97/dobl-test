@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<body>
+
+    <ui:composition template="WEB-INF/template.xhtml">
+        <ui:define name="content">
+            <h1>#{studentsProducer.addMode ? Hinzufügen : Ändern}</h1>
+
+            <h:form>
+                <h:panelGrid columns="6">
+                    <f:facet name="header">Student</f:facet>
+                    
+                    <h:outputLabel value="Nachname:"></h:outputLabel>
+                    <h:inputText id="a_nachname" value="#{studentsProducer.selectedStudent.nachname}">
+                    </h:inputText>
+                    <h:outputLabel value="Vorname:"></h:outputLabel>
+                    <h:panelGroup>
+                        <h:inputText value="#{studentsProducer.selectedStudent.vorname}"> </h:inputText>
+                    </h:panelGroup>
+                    <h:outputLabel value="Straße und Hausnummer:"></h:outputLabel>
+                    <h:panelGroup>
+                        <h:inputText value="#{studentsProducer.selectedStudent.address}"> </h:inputText>
+                    </h:panelGroup>
+                    <h:outputLabel value="Postleitzahl:"></h:outputLabel>
+                    <h:panelGroup>
+                        <h:inputText value="#{studentsProducer.selectedStudent.postleitzahl}">
+                        	
+                         </h:inputText>
+                    </h:panelGroup>
+                    <h:outputLabel value="Ort:"></h:outputLabel>
+                    <h:panelGroup>
+                        <h:inputText value="#{studentsProducer.selectedStudent.ort}"> </h:inputText>
+                    </h:panelGroup>
+                    
+                </h:panelGrid>
+                <h:commandButton value="Speichern"
+                                 action="#{editStudentController.doSave()}"/>
+                <h:commandButton value="Abbrechen" immediate="true"
+                                 action="#{editStudentController.doCancle()}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</body>
+</html>
