@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<body>
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="content">
+            <h1>Willkommen im Studentenregister</h1>
+
+            <h:form>
+                <h:commandButton value="Studenten anzeigen"
+                                 action="#{mainPageController.doListStudents()}"/>          
+                <h:panelGroup>
+                <h:commandButton value="Hinzufügen"
+                                 action="#{mainPageController.doAddStudents()}"/>
+                </h:panelGroup>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</body>
+</html>
