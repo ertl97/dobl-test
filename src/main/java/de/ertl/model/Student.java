@@ -77,14 +77,17 @@ public class Student {
 	}
 	
 	public long createMartrikelnummer() {
-		GregorianCalendar now = new GregorianCalendar();
+		/**GregorianCalendar now = new GregorianCalendar();
 		DateTimeFormatter df;
 		df = DateTimeFormatter.ofPattern("yy");
 		
+		**/
+		long df = 18;
 		long uni = 30;
 		long number = this.number + 1;
 		
-		long martrikelnummer = Integer.parseInt(df+" "+uni+" "+number);
+		long martrikelnummer = Integer.parseInt(df+""+uni+""+number);
+		
 		
 		return martrikelnummer;
 		

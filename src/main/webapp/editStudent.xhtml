@@ -4,7 +4,7 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html">
 <body>
 
-    <ui:composition template="/template.xhtml">
+    <ui:composition template="WEB-INF/template.xhtml">
         <ui:define name="content">
             <h1>#{studentsProducer.addMode ? Hinzufügen : Ändern}</h1>
 
@@ -25,7 +25,9 @@
                     </h:panelGroup>
                     <h:outputLabel value="Postleitzahl:"></h:outputLabel>
                     <h:panelGroup>
-                        <h:inputText value="#{studentsProducer.selectedStudent.postleitzahl}"> </h:inputText>
+                        <h:inputText value="#{studentsProducer.selectedStudent.postleitzahl}">
+                        	
+                         </h:inputText>
                     </h:panelGroup>
                     <h:outputLabel value="Ort:"></h:outputLabel>
                     <h:panelGroup>
